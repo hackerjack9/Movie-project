@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="movie.css">
+    <script src="movie.js"></script>
+</head>
+<body>
+        <nav class="nav__container">
+                <figure>
+                    <img class="nav__logo--img" src="./show_stopper-icon.png" alt="">
+               </figure>
+            <div class="nav__links">
+                <a href="#" class="nav__link">Home</a>
+                <a href="#" class="nav__link">Movies</a>
+                <a href="#" class="nav__link--special">Contact</a>
+            </div>
+        </nav>
+      <header>
+        <h1>Movie Search:</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search for movies..." onchange="onSearchChange(event)">
+            <button id="search-btn">Search</button>
+        </div>
+    </header>
+    
+    <main>
+        <div class="movie__container">
+        <section id="action-movies" class="movie-category">
+            <h2>Action Movies</h2>
+            <div class="movie-list">
+            </div>
+        </section>
+
+        <section id="comedy-movies" class="movie-category">
+            <h2>Comedy Movies</h2>
+            <div class="movie-list">
+            </div>
+        </section>
+
+        <section id="drama-movies" class="movie-category">
+            <h2>Drama Movies</h2>
+            <div class="movie-list">
+            </div>
+        </section>
+
+        <section id="horror-movies" class="movie-category">
+            <h2>Horror Movies</h2>
+            <div class="movie-list">
+            </div>
+        </section>
+
+          <section id="Adventure-movies" class="movie-category">
+            <h2>Adventure Movies</h2>
+            <div class="movie-list">
+            </div>
+        </section>
+
+        <section id="family-movies" class="movie-category">
+            <h2>Family Movies</h2>
+            <div class="movie-list">
+            </div>
+        </section>
+        </div>
+    </main>
+     
+</body>
+</html>
