@@ -21,51 +21,17 @@
       <header>
         <h1>Movie Search:</h1>
         <div class="search-container">
-            <input type="text" id="search" placeholder="Search for movies..." onchange="onSearchChange(fast)">
+            <input type="text" id="search" placeholder="Search for movies..." onchange="onSearchChange(event)">
             <button id="search-btn">Search</button>
         </div>
     </header>
     
     <main>
         <div class="movie__container">
-        <section id="action-movies" class="movie-category">
-            <h2>Action Movies</h2>
-            <div class="movie-list">
-               <h3 class="movie.Title"></h3>
-               <p class="movie.Year"></p>
-            </div>
-        </section>
-
-        <section id="comedy-movies" class="movie-category">
-            <h2>Comedy Movies</h2>
-            <div class="movie-list">
-            </div>
-        </section>
-
-        <section id="drama-movies" class="movie-category">
-            <h2>Drama Movies</h2>
-            <div class="movie-list">
-            </div>
-        </section>
-
-        <section id="horror-movies" class="movie-category">
-            <h2>Horror Movies</h2>
-            <div class="movie-list">
-            </div>
-        </section>
-
-          <section id="Adventure-movies" class="movie-category">
-            <h2>Adventure Movies</h2>
-            <div class="movie-list">
-            </div>
-        </section>
-
-        <section id="family-movies" class="movie-category">
-            <h2>Family Movies</h2>
-            <div class="movie-list">
-            </div>
-        </section>
-        </div>
+       <img class="movie__container--img" src="./movie.svg" alt="">
+      <h3 class="movie__container--title">Find Your Favorite Movies Instantly</h3>
+      <p class="movie__container--subtitle">Search through thousands of titles and discover your next great watch.</p>
+    </div>
     </main>
      <script src="movie.js"></script>
 </body>

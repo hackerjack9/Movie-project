@@ -1,7 +1,7 @@
 // Get references to DOM elements
 const searchButton = document.getElementById('search-btn');
 const searchInput = document.getElementById('search');
-const movieContainer = document.getElementById('movie-container');
+const movieContainer = document.querySelector('.movie__container');
 
 // Add event listener to the search button
 searchButton.addEventListener('click', async () => {
@@ -10,9 +10,7 @@ searchButton.addEventListener('click', async () => {
     const response = await fetch(`http://www.omdbapi.com/?s=fast&apikey=b5b98c80`);
     const data = await response.json(); // Parse the JSON response
     
-     function onSearchChange(event) {
-        console.log(event.target.value)
-    }
+    
 
     // Clear previous results
     movieContainer.innerHTML = '';
@@ -35,5 +33,9 @@ searchButton.addEventListener('click', async () => {
         movieContainer.innerHTML = `<p>No movies found.</p>`; // Handle no results
     }
 });
+
+ function onSearchChange(event) {
+        console.log(event.target.value)
+    }
 
 

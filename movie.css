@@ -132,6 +132,22 @@ main {
     justify-content: center;
 }
 
+.movie__container--img {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 50px;
+}
+
+.movie__container--title {
+color: white;
+}
+
+.movie__container--subtitle {
+color: white;
+}
+
+
+
 /*Explanation of the CSS
 //Body Styles: Sets the font, background color, and padding for the entire page.
 Header Styles: Centers the header text and adds some margin below it.
