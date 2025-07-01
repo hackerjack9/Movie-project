@@ -19,11 +19,10 @@ body {
 }
 
 nav {
-      background-image: url(best-movie-wall.jpg);
       width: 100%;
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 24vh;  
+      position: relative;
+      overflow: hidden;
+      height: 28vh;
 }
 
 .nav__links {
@@ -68,7 +67,7 @@ header {
  }
 
 .search-container {
-    margin: 20px 0;
+    margin: 20px 0px;
 }
 
 .search-container input {
@@ -99,6 +98,13 @@ main {
     width: 100%;
 }
 
+.movies__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
 .movie-category {
     background: white;
     margin: 10px;
@@ -117,12 +123,12 @@ main {
 
 .movie-item {
     background: #e9ecef;
+    text-align: center;
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     width: 150px; /* Adjust width as needed */
-    
 }
 
 .movie__container {
@@ -135,7 +141,7 @@ main {
 .movie__container--img {
     width: 100%;
     max-width: 400px;
-    margin-top: 50px;
+    margin-top: 24px;
 }
 
 .movie__container--title {
@@ -144,15 +150,66 @@ color: white;
 
 .movie__container--subtitle {
 color: white;
+margin-top: 0px;
+}
+
+.movie__container--wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie__container--title span {
+    color:rgb(19, 236, 19);
+}
+
+.nav__background--img {
+    position: absolute;
+    width: 100%;
+    filter: blur(2px); 
+    filter: brightness(60%);
+    z-index:-1;
+}
+
+#filter {
+position: absolute;
+left: 80%;
+top: 35%;
+
+}
+
+.movies__container--spinner {
+    display: none;
+}
+.search__container .movies__container--spinner {
+    display: block !important;
 }
 
 
 
-/*Explanation of the CSS
-//Body Styles: Sets the font, background color, and padding for the entire page.
-Header Styles: Centers the header text and adds some margin below it.
-Search Container: Styles the search input and button, including padding, border, and hover effects for the button.
-Main Section: Uses flexbox to align the movie categories in a column.
-Movie Category Styles: Adds a white background, margin, padding, and shadow to each category section.
-Movie List Styles: Arranges movie items in a flexible layout that wraps as needed.
-Movie Item Styles: Styles individual movie items with a light background, margin, padding, and shadow for a card-like appearance.*/
+.movies__container--loading {
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    font-size: 60px;
+
+}
+
+.fa-spinner {
+    animation: spinner 750ms infinite linear;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+

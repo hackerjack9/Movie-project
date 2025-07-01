@@ -7,10 +7,9 @@ const movieContainer = document.querySelector('.movie__container');
 searchButton.addEventListener('click', async () => {
     const searchTerm = searchInput.value; // Get the search term from input
     const apiKey = 'https://www.omdbapi.com/?apikey=b5b98c80'; // Replace with your actual API key
-    const response = await fetch(`http://www.omdbapi.com/?s=fast&apikey=b5b98c80`);
+    const response = await fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=b5b98c80`);
     const data = await response.json(); // Parse the JSON response
-    
-    
+
 
     // Clear previous results
     movieContainer.innerHTML = '';
@@ -19,7 +18,7 @@ searchButton.addEventListener('click', async () => {
     // Check if the response is successful
     if (data.Response === 'True') {
         // Loop through the results and create movie items
-        data.Search.forEach(movie => {
+        data.Search.slice(0, 6).forEach(movie => {
             const movieItem = document.createElement('div');
             movieItem.classList.add('movie-item');
             movieItem.innerHTML = `
@@ -32,10 +31,54 @@ searchButton.addEventListener('click', async () => {
     } else {
         movieContainer.innerHTML = `<p>No movies found.</p>`; // Handle no results
     }
+
 });
+
+
 
  function onSearchChange(event) {
         console.log(event.target.value)
-    }
+    };
 
 
+
+//let movies;
+
+//async function renderMovies(filter) {
+ //   const moviesWrapper = document.querySelector(".movies");
+
+
+//const movies = getMovies();
+
+ //   moviesWrapper.classList += ' movies__container--loading'
+
+ //   moviesWrapper.innerHTML = "";
+
+ //   if (!movies) {
+ //       movies = await getMovies();
+ //   }
+
+ //   moviesWrapper.classList.remove('movies__container--loading')
+
+ //   if (filter === "A__TO__Z") {
+ //       movies.sort(
+ //       )
+ //   }
+
+ //   else if (filter === "Z__TO__A") {
+ //       movies.sort(
+ //       )
+ //   }
+
+ //   else if (filter === "Year") {
+ //       (a, b) => a - b;
+ //   }
+//}
+ 
+//setTimeout(() => {
+//    renderMovies();
+//});
+
+//API data
+//function getMovies() {array of movies from API}
+    
