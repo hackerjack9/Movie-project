@@ -3,6 +3,7 @@ const searchButton = document.getElementById('search-btn');
 const searchInput = document.getElementById('search');
 const movieContainer = document.querySelector('.movie__container');
 
+
 // Add event listener to the search button
 searchButton.addEventListener('click', async () => {
     const searchTerm = searchInput.value; // Get the search term from input
@@ -32,48 +33,55 @@ searchButton.addEventListener('click', async () => {
         movieContainer.innerHTML = `<p>No movies found.</p>`; // Handle no results
     }
 
+
+
+const array1 = (`http://www.omdbapi.com/?s=${searchTerm}&apikey=b5b98c80`)
+
+// order an array of names
+array1.sort();
+
+// order an array of objects with name
+users.sort(function (a, b) {
+  if (a.array1 < b.array1) {
+    return -1;
+  }
+  if (a.array1 > b.array1) {
+    return 1;
+  }
+  return 0;
 });
 
+});
+
+
+function filterMovies(event) {
+    console.log(event.target.value)
 
 
  function onSearchChange(event) {
         console.log(event.target.value)
     };
+}
+
+// Call the function to fetch and sort data
+fetchAndSortData(); 
 
 
-
-//let movies;
-
-//async function renderMovies(filter) {
- //   const moviesWrapper = document.querySelector(".movies");
-
-
-//const movies = getMovies();
-
- //   moviesWrapper.classList += ' movies__container--loading'
-
- //   moviesWrapper.innerHTML = "";
-
- //   if (!movies) {
- //       movies = await getMovies();
- //   }
-
- //   moviesWrapper.classList.remove('movies__container--loading')
-
- //   if (filter === "A__TO__Z") {
- //       movies.sort(
- //       )
+  //  if (filter === "A__TO__Z") {
+  //      movies.sort(
+  //      )
  //   }
 
  //   else if (filter === "Z__TO__A") {
- //       movies.sort(
- //       )
- //   }
+  ///      movies.sort(
+  //      )
+  //  }
 
  //   else if (filter === "Year") {
- //       (a, b) => a - b;
- //   }
-//}
+  //     (a, b) => a - b;
+  // }
+
+
  
 //setTimeout(() => {
 //    renderMovies();
@@ -81,4 +89,5 @@ searchButton.addEventListener('click', async () => {
 
 //API data
 //function getMovies() {array of movies from API}
+
     

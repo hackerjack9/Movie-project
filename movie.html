@@ -25,14 +25,13 @@
             <input type="text" id="search" placeholder="Search for movies..." onchange="onSearchChange(event)">
             <button id="search-btn">Search</button>
         </div>
-          <div class="movies">
+          <div id="movies">
                 <i class="fas fa-spinner movies__loading--spinner"></i>
               </div>
       
     </header>
     
     <main>
-      
         <select id="filter" onchange="filterMovies(event)">
               <option value="" disabled selected>Sort</option>
               <option value="A__TO__Z">Title, A to Z</option>
