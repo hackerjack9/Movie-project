@@ -87,7 +87,7 @@ header {
 }
 
 #search-btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838; 
 }
 
 main {
@@ -128,7 +128,7 @@ main {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    width: 150px; /* Adjust width as needed */
+    width: 150px; 
 }
 
 .movie__container {
@@ -177,12 +177,6 @@ margin-top: 0px;
 position: absolute;
 left: 80%;
 top: 35%;
-
-}
-
-
-#targetDiv {
-  position: relative; 
 }
 
  .spinner {
@@ -191,7 +185,7 @@ top: 35%;
     border-radius: 50%;
      width: 50px;
     height: 50px;
-     animation: spin 2s linear infinite;
+     animation: spin 4s linear infinite;
      display: none; 
      margin: 20px auto; 
         }
@@ -201,11 +195,9 @@ top: 35%;
   100% { transform: rotate(360deg); }
 }
 
-
 .hidden {
   display: none; 
 }
-
 
 .movies__container--loading {
     display: flex;
@@ -213,7 +205,6 @@ top: 35%;
     color: white;
     justify-content: center;
     font-size: 60px;
-
 }
 
 
