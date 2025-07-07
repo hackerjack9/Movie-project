@@ -2,9 +2,8 @@
 const searchButton = document.getElementById('search-btn');
 const searchInput = document.getElementById('search');
 const movieContainer = document.querySelector('.movie__container');
+const filterSelect = document.getElementById('filter'); // Assuming you have a select element for filtering
 let currentMovies = [];
-
-
 
 // Add event listener to the search button
 searchButton.addEventListener('click', async () => {
@@ -17,64 +16,55 @@ searchButton.addEventListener('click', async () => {
     // Clear previous results
     movieContainer.innerHTML = '';
 
-    
     // Check if the response is successful
     if (data.Response === 'True') {
-        // Loop through the results and create movie items
-        data.Search.slice(0, 6).forEach(movie => {
-            const movieItem = document.createElement('div');
-            movieItem.classList.add('movie-item');
-            movieItem.innerHTML = `
-                <h3>${movie.Title}</h3>
-                <p>Year: ${movie.Year}</p>
-                <img src="${movie.Poster}" alt="${movie.Title}" style="width:100px;height:auto;">
-            `;
-            movieContainer.appendChild(movieItem); // Append movie item to container
-        });
+        currentMovies = data.Search.slice(0, 6); // Store the current movies
+        renderMovies(currentMovies); // Render the movies
     } else {
         movieContainer.innerHTML = `<p>No movies found.</p>`; // Handle no results
     }
 });
 
+// Function to render movies in the container
+function renderMovies(movies) {
+    movieContainer.innerHTML = ''; 
+    movies.forEach(movie => {
+        const movieItem = document.createElement('div');
+        movieItem.classList.add('movie-item');
+        movieItem.innerHTML = `
+            <h3>${movie.Title}</h3>
+            <p>Year: ${movie.Year}</p>
+            <img src="${movie.Poster}" alt="${movie.Title}" style="width:100px;height:auto;">
+        `;
+        movieContainer.appendChild(movieItem);
+    });
+}
 
-
-  
-
+// Function to filter movies based on the selected option
 function filterMovies(event) {
-
     const filter = event.target.value;
+    let sorted = [...currentMovies];
 
     if (currentMovies.length === 0) return;
 
-
     if (filter === "A__TO__Z") {
-
         sorted.sort((a, b) => a.Title.localeCompare(b.Title));
-
     } else if (filter === "Z__TO__A") {
-
         sorted.sort((a, b) => b.Title.localeCompare(a.Title));
-
     } else if (filter === "Year") {
-
         sorted.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
-
     }
 
-    
-      
-    movieContainer.innerHTML = Map.result[];
-
-
     renderMovies(sorted);
-
 }
 
+// Add event listener for the filter select
+filterSelect.addEventListener('change', filterMovies);
 
+// Optional: Log search input changes
+function onSearchChange(event) {
+    console.log(event.target.value);
+}
 
-
- function onSearchChange(event) {
-        console.log(event.target.value)
-    };
 
 
