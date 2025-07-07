@@ -2,6 +2,8 @@
 const searchButton = document.getElementById('search-btn');
 const searchInput = document.getElementById('search');
 const movieContainer = document.querySelector('.movie__container');
+let currentMovies = [];
+
 
 
 // Add event listener to the search button
@@ -36,8 +38,7 @@ searchButton.addEventListener('click', async () => {
 
 
 
-
-   let sorted = [currentMovies];
+  
 
 function filterMovies(event) {
 
@@ -61,6 +62,9 @@ function filterMovies(event) {
     }
 
     
+      
+    movieContainer.innerHTML = Map.result[];
+
 
     renderMovies(sorted);
 
