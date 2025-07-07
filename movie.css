@@ -180,13 +180,31 @@ top: 35%;
 
 }
 
-.movies__container--spinner {
-    display: none;
-}
-.search__container .movies__container--spinner {
-    display: block !important;
+
+#targetDiv {
+  position: relative; 
 }
 
+ .spinner {
+     border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db; 
+    border-radius: 50%;
+     width: 50px;
+    height: 50px;
+     animation: spin 2s linear infinite;
+     display: none; 
+     margin: 20px auto; 
+        }
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.hidden {
+  display: none; 
+}
 
 
 .movies__container--loading {
@@ -198,18 +216,5 @@ top: 35%;
 
 }
 
-.fa-spinner {
-    animation: spinner 750ms infinite linear;
-}
-
-@keyframes spinner {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
 

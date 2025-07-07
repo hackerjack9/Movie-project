@@ -24,10 +24,8 @@
         <div class="search-container">
             <input type="text" id="search" placeholder="Search for movies..." onchange="onSearchChange(event)">
             <button id="search-btn">Search</button>
+           
         </div>
-          <div id="movies">
-                <i class="fas fa-spinner movies__loading--spinner"></i>
-              </div>
       
     </header>
     
@@ -37,13 +35,16 @@
               <option value="A__TO__Z">Title, A to Z</option>
               <option value="Z__TO__A">Title, Z to A</option>
               <option value="Year">Year</option>
-            </select>
+        </select>
+
      <div class="movie__container">
         <div class="movie__container--wrapper">
+ <div class="spinner" id="spinner"></div>
+
        <img class="movie__container--img" src="./movie.svg" alt="">
       <h3 class="movie__container--title">Find <span>Your Favorite Movies</span> Instantly!</h3>
       <p class="movie__container--subtitle">Search through thousands of titles and discover your next great watch.</p>
- 
+
       <div class="movies__header"></div>
             </div>
         </div>   
