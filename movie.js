@@ -32,62 +32,45 @@ searchButton.addEventListener('click', async () => {
     } else {
         movieContainer.innerHTML = `<p>No movies found.</p>`; // Handle no results
     }
-
-
-
-const array1 = (`http://www.omdbapi.com/?s=${searchTerm}&apikey=b5b98c80`)
-
-// order an array of names
-array1.sort();
-
-// order an array of objects with name
-users.sort(function (a, b) {
-  if (a.array1 < b.array1) {
-    return -1;
-  }
-  if (a.array1 > b.array1) {
-    return 1;
-  }
-  return 0;
 });
 
-});
 
+
+
+   let sorted = [currentMovies];
 
 function filterMovies(event) {
-    console.log(event.target.value)
+
+    const filter = event.target.value;
+
+    if (currentMovies.length === 0) return;
+
+
+    if (filter === "A__TO__Z") {
+
+        sorted.sort((a, b) => a.Title.localeCompare(b.Title));
+
+    } else if (filter === "Z__TO__A") {
+
+        sorted.sort((a, b) => b.Title.localeCompare(a.Title));
+
+    } else if (filter === "Year") {
+
+        sorted.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
+
+    }
+
+    
+
+    renderMovies(sorted);
+
+}
+
+
 
 
  function onSearchChange(event) {
         console.log(event.target.value)
     };
-}
-
-// Call the function to fetch and sort data
-fetchAndSortData(); 
 
 
-  //  if (filter === "A__TO__Z") {
-  //      movies.sort(
-  //      )
- //   }
-
- //   else if (filter === "Z__TO__A") {
-  ///      movies.sort(
-  //      )
-  //  }
-
- //   else if (filter === "Year") {
-  //     (a, b) => a - b;
-  // }
-
-
- 
-//setTimeout(() => {
-//    renderMovies();
-//});
-
-//API data
-//function getMovies() {array of movies from API}
-
-    
