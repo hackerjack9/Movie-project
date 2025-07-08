@@ -79,3 +79,5 @@ filterSelect.addEventListener('change', filterMovies);
 function onSearchChange(event) {
     console.log(event.target.value);
 }
+
+

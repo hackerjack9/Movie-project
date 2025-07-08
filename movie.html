@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Search App</title>
-    <link rel="stylesheet" href="movie.css">
-    
-</head>
-<body>
-        <nav class="nav__container">
-                <figure>
-                    <img class="nav__logo--img" src="./show_stopper-icon.png" alt="">
-               </figure>
-            <div class="nav__links">
-                <a href="#" class="nav__link">Home</a>
-                <a href="#" class="nav__link">Movies</a>
-                <a href="#" class="nav__link--special">Contact</a>
-            </div>
-            <img class="nav__background--img" src="./largemovieimage.png" alt="">
-        </nav>
-      <header>
-        <h1>Movie Search:</h1>
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Search for movies..." onchange="onSearchChange(event)">
-            <button id="search-btn">Search</button>
-           
-        </div>
-      
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Stopper Movie Search App</title>
+    <link rel="stylesheet" href="movie.css" />
+  </head>
+  <body>
+    <nav class="nav__container">
+      <figure>
+        <img class="nav__logo--img" src="./show_stopper-icon.png" alt="" />
+      </figure>
+      <div class="nav__links">
+        <a href="#" class="nav__link">Home</a>
+        <a href="#" class="nav__link">Movies</a>
+        <a href="#" class="nav__link--special">Contact</a>
+      </div>
+      <img class="nav__background--img" src="./largemovieimage.png" alt="" />
+    </nav>
+    <header>
+      <h1>Movie Search:</h1>
+      <div class="search-container">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search for movies..."
+          onchange="onSearchChange(event)"
+        />
+        <button id="search-btn">Search</button>
+      </div>
     </header>
-    
-  <main>
-    <select id="filter" onchange="filterMovies(event)">
+
+    <main>
+      <select id="filter" onchange="filterMovies(event)">
         <option value="" disabled selected>Sort</option>
         <option value="A__TO__Z">Title, A to Z</option>
         <option value="Z__TO__A">Title, Z to A</option>
         <option value="Year">Year</option>
-    </select>
+      </select>
 
-    <div class="spinner" id="spinner"></div>
+      <div class="spinner" id="spinner"></div>
 
-    <div class="movie__container">
+      <div class="movie__container">
         <div class="movie__container--wrapper">
-            <img class="movie__container--img" src="./movie.svg" alt="">
-            <h3 class="movie__container--title">Find <span>Your Favorite Movies</span> Instantly!</h3>
-            <p class="movie__container--subtitle">Search through thousands of titles and discover your next great watch.</p>
-            <div class="movies__header"></div>
+          <img class="movie__container--img" src="./movie.svg" alt="" />
+          <h3 class="movie__container--title">
+            Find <span>Your Favorite Movies</span> Instantly!
+          </h3>
+          <p class="movie__container--subtitle">
+            Search through thousands of titles and discover your next great
+            watch.
+          </p>
+          <div class="movies__header"></div>
         </div>
-    </div>
-</main>
+      </div>
+    </main>
 
-     <script src="movie.js"></script>
-</body>
+    <script src="movie.js"></script>
+  </body>
 </html>
